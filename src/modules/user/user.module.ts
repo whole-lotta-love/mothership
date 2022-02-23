@@ -1,16 +1,25 @@
 import { Module } from '@nestjs/common';
-import { CqrsModule } from '@nestjs/cqrs';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CqrsModule } from '@nestjs/cqrs';
 import { RegisterController } from './application/ports/register.controller';
-import { CreateUserService } from './application/use-case/create-user/create-user.service';
-import { InputUserService } from './domain/services/inputUser.service';
-import { CreateUserHandle } from './application/use-case/create-user/create-user.handler';
+import { FindUserController } from './application/ports/find.http.controller';
+import {
+  CreateUserService,
+  DomainServices,
+  SearchUserService,
+  UsersCommandsHandlers,
+} from './shared';
 import User from './domain/entities/user.entity';
 
 @Module({
   imports: [CqrsModule, TypeOrmModule.forFeature([User])],
-  providers: [CreateUserService, InputUserService, CreateUserHandle],
-  controllers: [RegisterController],
-  exports: [],
+  providers: [
+    ...DomainServices,
+    ...UsersCommandsHandlers,
+    CreateUserService,
+    SearchUserService,
+  ],
+  controllers: [RegisterController, FindUserController],
+  exports: [CreateUserService],
 })
 export class UserModule {}

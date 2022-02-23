@@ -4,6 +4,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { TransformInterceptor } from './infrastructure/interceptors/transform.interceptor';
 import { UserModule } from './modules/user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './modules/auth/auth.module';
 import configuration from './infrastructure/config/configuration';
 
 @Module({
@@ -15,6 +16,7 @@ import configuration from './infrastructure/config/configuration';
       useFactory: (config: ConfigService) => config.get('database'),
     }),
     UserModule,
+    AuthModule,
   ],
   providers: [
     {
