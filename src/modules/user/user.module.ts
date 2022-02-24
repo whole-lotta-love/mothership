@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CqrsModule } from '@nestjs/cqrs';
-import { RegisterController } from './application/ports/register.controller';
 import { FindUserController } from './application/ports/find.http.controller';
 import {
   CreateUserService,
@@ -19,7 +18,7 @@ import User from './domain/entities/user.entity';
     CreateUserService,
     SearchUserService,
   ],
-  controllers: [RegisterController, FindUserController],
+  controllers: [FindUserController],
   exports: [CreateUserService],
 })
 export class UserModule {}

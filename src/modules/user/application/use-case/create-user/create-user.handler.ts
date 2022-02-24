@@ -7,8 +7,7 @@ import User from 'src/modules/user/domain/entities/user.entity';
 export class CreateUserHandle implements ICommandHandler<CreateUserCommand> {
   constructor(private readonly inputUser: InputUserService) {}
 
-  async execute(command: CreateUserCommand): Promise<User> {
-    const user = await this.inputUser.createUser(command);
-    return user;
+  execute(command: CreateUserCommand): Promise<User> {
+    return this.inputUser.createUser(command);
   }
 }
