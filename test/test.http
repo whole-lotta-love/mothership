@@ -14,5 +14,5 @@ POST http://127.0.0.1:4444/users/
 Content-Type: application/json
 
 {
-    "email" : "test@email.com",
+    "email" : "test@email.com"
 }

@@ -2,7 +2,11 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
 import { SearchUserCommand } from 'src/modules/user/application/use-case/search-user/search-user.command';
 import { compare } from 'bcrypt';
-import { CreateUserDto, CreateUserService } from 'src/modules/user/shared';
+import {
+  CreateUserDto,
+  CreateUserService,
+  UserIdentification,
+} from 'src/modules/user/shared';
 import User from 'src/modules/user/domain/entities/user.entity';
 
 @Injectable()
@@ -16,11 +20,11 @@ export class RegisterService {
     return await this.createUserService.handle(user);
   }
 
-  async validateUser(username: string, password: string): Promise<User> {
+  async validateUser(credentials: UserIdentification): Promise<User> {
     const user: User = await this.commandBus.execute(
-      new SearchUserCommand({ username }),
+      new SearchUserCommand(credentials),
     );
-    if (await compare(password, user.password)) return user;
+    if (await compare(credentials.password, user.password)) return user;
     throw new HttpException('User Not Found', HttpStatus.NOT_FOUND);
   }
 }

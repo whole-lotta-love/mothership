@@ -6,7 +6,7 @@ import { SearchUserService } from '../use-case/search-user/search-user.service';
 export class FindUserController {
   constructor(private readonly searchUser: SearchUserService) {}
 
-  @Post('')
+  @Post()
   findUser(@Body() body: UserIdentification) {
     return this.searchUser.handler(body);
   }
