@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dmfac7zfe/image/upload/v1645031139/icons/venti_expectant.png" width="220" alt="Nest Logo" /></a>
+  <img src="https://res.cloudinary.com/dmfac7zfe/image/upload/v1645031139/icons/venti_expectant.png" width="220" alt="venti expectant" />
 </p>
 
 ## Description
