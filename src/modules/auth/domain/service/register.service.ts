@@ -1,29 +1,27 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { CommandBus } from '@nestjs/cqrs';
-import { SearchUserCommand } from '@user/application/use-case/search-user/search-user.command';
 import { compare } from 'bcrypt';
 import {
   UserDto,
   CreateUserService,
   UserIdentification,
+  UserStructure,
+  SearchUserService,
 } from '@user/shared';
-import User from '@user/domain/entities/user.entity';
 
 @Injectable()
 export class RegisterService {
   constructor(
-    private readonly commandBus: CommandBus,
-    private readonly createUserService: CreateUserService,
+    private readonly createUser: CreateUserService,
+    private readonly searchUser: SearchUserService,
   ) {}
 
-  async signup(user: UserDto): Promise<User> {
-    return await this.createUserService.handle(user);
+  async signup(user: UserDto): Promise<UserStructure> {
+    return await this.createUser.handle(user);
   }
 
-  async validateUser(credentials: UserIdentification): Promise<User> {
-    const user: User = await this.commandBus.execute(
-      new SearchUserCommand(credentials),
-    );
+  async validateUser(credentials: UserIdentification): Promise<UserStructure> {
+    const user: UserStructure = await this.searchUser.handler(credentials);
+
     if (await compare(credentials.password, user.password)) return user;
     throw new HttpException('User Not Found', HttpStatus.NOT_FOUND);
   }
