@@ -1,6 +1,6 @@
-import { CreateUserDto } from 'src/modules/user/shared';
+import { UserDto } from 'src/modules/user/shared';
 
-export default class CreateUserCommand implements CreateUserDto {
+export default class CreateUserCommand implements UserDto {
   constructor(
     readonly email: string,
     readonly name: string,

@@ -2,16 +2,10 @@ import { BeforeInsert, Column, Entity } from 'typeorm';
 import { AbstractEntity } from 'src/libs/class/AbstractEntity';
 import { Exclude } from 'class-transformer';
 import { hash } from 'bcrypt';
-
-export type UserStruture = {
-  email: string;
-  username: string;
-  name: string;
-  password: string;
-};
+import { UserStructure } from '../../shared';
 
 @Entity({ name: 'Users' })
-export default class User extends AbstractEntity implements UserStruture {
+export default class User extends AbstractEntity implements UserStructure {
   @Column({ unique: true })
   email: string;
 

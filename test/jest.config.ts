@@ -12,5 +12,6 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src', 'test'],
   moduleNameMapper: {
     '@src/(.*)': '<rootDir>src/$1',
+    '@user/(.*)': '<rootDir>src/modules/user/$1',
   },
 };

@@ -9,7 +9,7 @@ import {
   DuplicateEmail,
   DuplicateUsername,
 } from '../../infrastructure/errors/duplicate.exception';
-import { CreateUserDto } from '../../shared';
+import { UserDto } from '../../shared';
 import User from '../entities/user.entity';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class InputUserService {
     @InjectRepository(User) private readonly userRepository: Repository<User>,
   ) {}
 
-  async createUser(input: CreateUserDto): Promise<User> {
+  async createUser(input: UserDto): Promise<User> {
     const user = this.userRepository.create(input);
     /**
      * refactoring needed

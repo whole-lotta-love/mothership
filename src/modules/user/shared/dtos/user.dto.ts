@@ -5,9 +5,16 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
-import { UserStruture } from '../../domain/entities/user.entity';
 
-export class CreateUserDto implements UserStruture {
+export type UserStructure = {
+  email: string;
+  username: string;
+  name: string;
+  password: string;
+};
+
+
+export class UserDto implements UserStructure {
   @IsEmail()
   @MaxLength(244)
   email: string;

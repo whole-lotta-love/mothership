@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
-import { CreateUserDto } from 'src/modules/user/shared';
+import { UserDto } from 'src/modules/user/shared';
 import CreateUserCommand from './create-user.command';
 import User from 'src/modules/user/domain/entities/user.entity';
 
@@ -8,7 +8,7 @@ import User from 'src/modules/user/domain/entities/user.entity';
 export class CreateUserService {
   constructor(private readonly commandBus: CommandBus) {}
 
-  async handle(body: CreateUserDto): Promise<User> {
+  async handle(body: UserDto): Promise<User> {
     return this.commandBus.execute(
       new CreateUserCommand(
         body.email,
