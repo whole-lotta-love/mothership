@@ -20,7 +20,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand --config test/jest.config.ts",
     "test:e2e": "jest --config ./test/jest-e2e.config.ts",
     "ormcli": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config src/infrastructure/config/ormconfig",
-    "migration:generate": "yarn ormcli migration:create -n",
+    "migration:generate": "yarn ormcli migration:generate -n",
     "migration:run": "yarn ormcli migration:run",
     "migration:revert": "yarn ormcli migration:revert"
   },
