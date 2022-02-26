@@ -1,4 +1,4 @@
-import { UserDto } from 'src/modules/user/shared';
+import { UserDto } from '@user/shared';
 
 export default class CreateUserCommand implements UserDto {
   constructor(

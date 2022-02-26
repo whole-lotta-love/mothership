@@ -8,8 +8,8 @@ import { Repository } from 'typeorm';
 import {
   DuplicateEmail,
   DuplicateUsername,
-} from '../../infrastructure/errors/duplicate.exception';
-import { UserDto } from '../../shared';
+} from '@user/infrastructure/errors/duplicate.exception';
+import { UserDto } from '@user/shared';
 import User from '../entities/user.entity';
 
 @Injectable()

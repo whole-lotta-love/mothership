@@ -1,8 +1,8 @@
 import { BeforeInsert, Column, Entity } from 'typeorm';
-import { AbstractEntity } from 'src/libs/class/AbstractEntity';
-import { Exclude } from 'class-transformer';
 import { hash } from 'bcrypt';
-import { UserStructure } from '../../shared';
+import { Exclude } from 'class-transformer';
+import { AbstractEntity } from '@src/libs/class/AbstractEntity';
+import { UserStructure } from '@user/shared';
 
 @Entity({ name: 'Users' })
 export default class User extends AbstractEntity implements UserStructure {

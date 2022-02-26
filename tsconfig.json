@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2020",
+    "target": "esnext",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -18,7 +18,8 @@
 
     "paths": {
       "@src/*": ["src/*"],
-      "@user/*": ["src/modules/user/*"]
+      "@user/*": ["src/modules/user/*"],
+      "@auth/*": ["src/modules/auth/*"]
     }
   }
 }

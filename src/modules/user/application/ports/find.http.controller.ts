@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { UserIdentification } from '../../shared/dtos/find-user.dto';
 import { SearchUserService } from '../use-case/search-user/search-user.service';
+import { UserIdentification } from '@user/shared/dtos';
 
 @Controller('users')
 export class FindUserController {
