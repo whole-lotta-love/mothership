@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { SearchUserCommand } from '../../application/use-case/search-user/search-user.command';
+import { SearchUserCommand } from '@user/application/use-case/search-user/search-user.command';
 import User from '../entities/user.entity';
 
 @Injectable()

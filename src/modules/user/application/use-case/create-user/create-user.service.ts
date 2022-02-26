@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
-import { UserDto } from 'src/modules/user/shared';
+import { UserDto } from '@user/shared';
 import CreateUserCommand from './create-user.command';
-import User from 'src/modules/user/domain/entities/user.entity';
+import User from '@user/domain/entities/user.entity';
 
 @Injectable()
 export class CreateUserService {

@@ -6,8 +6,8 @@ import {
   UserDto,
   CreateUserService,
   UserIdentification,
-} from 'src/modules/user/shared';
-import User from 'src/modules/user/domain/entities/user.entity';
+} from '@user/shared';
+import User from '@user/domain/entities/user.entity';
 
 @Injectable()
 export class RegisterService {

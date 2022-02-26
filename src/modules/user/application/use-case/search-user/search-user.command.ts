@@ -1,4 +1,4 @@
-import { UserIdentification } from 'src/modules/user/shared/dtos/find-user.dto';
+import { UserIdentification } from '@user/shared/dtos';
 
 export class SearchUserCommand {
   readonly email?: string;

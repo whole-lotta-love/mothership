@@ -6,13 +6,18 @@ import {
   MinLength,
 } from 'class-validator';
 
+export interface UserIdentification {
+  email?: string;
+  username?: string;
+  password?: string;
+}
+
 export type UserStructure = {
   email: string;
   username: string;
   name: string;
   password: string;
 };
-
 
 export class UserDto implements UserStructure {
   @IsEmail()

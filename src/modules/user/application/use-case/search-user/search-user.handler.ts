@@ -1,7 +1,7 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import User from 'src/modules/user/domain/entities/user.entity';
-import { FindUserService } from 'src/modules/user/domain/services/find-user.service';
+import { FindUserService } from '@user/domain/services/find-user.service';
 import { SearchUserCommand } from './search-user.command';
+import User from '@user/domain/entities/user.entity';
 
 @CommandHandler(SearchUserCommand)
 export class SearchUserHandler implements ICommandHandler<SearchUserCommand> {

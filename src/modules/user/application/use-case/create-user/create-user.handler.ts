@@ -1,7 +1,7 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { InputUserService } from 'src/modules/user/domain/services/inputUser.service';
+import { InputUserService } from '@user/domain/services/inputUser.service';
 import CreateUserCommand from './create-user.command';
-import User from 'src/modules/user/domain/entities/user.entity';
+import User from '@user/domain/entities/user.entity';
 
 @CommandHandler(CreateUserCommand)
 export class CreateUserHandle implements ICommandHandler<CreateUserCommand> {
