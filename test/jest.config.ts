@@ -13,6 +13,6 @@ module.exports = {
   moduleNameMapper: {
     '@src/(.*)': '<rootDir>src/$1',
     '@user/(.*)': '<rootDir>src/modules/user/$1',
-    '@uath/(.*)': '<rootDir>src/modules/auth/$1',
+    '@auth/(.*)': '<rootDir>src/modules/auth/$1',
   },
 };
