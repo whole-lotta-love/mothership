@@ -1,13 +1,13 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 
-export class DuplicateEmail extends HttpException {
+export class DuplicateEmailException extends HttpException {
   constructor() {
-    super('Request conflict, email duplicate', HttpStatus.CONFLICT);
+    super('Request conflict, the email address is already registered', HttpStatus.CONFLICT);
   }
 }
 
-export class DuplicateUsername extends HttpException {
+export class DuplicateUsernameException extends HttpException {
   constructor() {
-    super('Request conflict, username duplicate', HttpStatus.CONFLICT);
+    super('Request conflict, the username is already registerede', HttpStatus.CONFLICT);
   }
 }

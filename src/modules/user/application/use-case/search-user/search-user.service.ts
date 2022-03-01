@@ -11,8 +11,9 @@ export class SearchUserService {
   async handler(user: UserIdentification): Promise<User> {
     const found = await this.commandBus.execute(new SearchUserCommand(user));
 
-    if (!found) throw new HttpException('User not Found', 409);
-
+    if (!found) {
+      return null;
+    }
     return found;
   }
 }
