@@ -16,26 +16,26 @@ $ yarn install
 
 ```bash
 # development
-$ yarn start
+$ pnpm start
 
 # watch mode
-$ yarn start:dev
+$ pnpm start:dev
 
 # production mode
-$ yarn start:prod
+$ pnpm start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ yarn run test
+$ pnpm run test
 
 # e2e tests
-$ yarn run test:e2e
+$ pnpm run test:e2e
 
 # test coverage
-$ yarn run test:cov
+$ pnpm run test:cov
 ```
 
 Mothership is [GNU GENERAL PUBLIC LICENSE](LICENSE).
