@@ -9,7 +9,7 @@ Carry me back, baby, where I come from.
 ## Installation
 
 ```bash
-$ yarn install
+$ pnpm install
 ```
 
 ## Running the app
