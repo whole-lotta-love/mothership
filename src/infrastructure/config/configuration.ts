@@ -13,6 +13,5 @@ export default () => ({
       process.env.NODE_ENV === 'test'
         ? ['src/**/*.entity.ts']
         : ['dist/**/*.entity.js'],
-    keepConnectionAlive: process.env.NODE_ENV === 'test',
   },
 });
